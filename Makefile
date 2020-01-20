@@ -6,6 +6,13 @@ BUILD := ./build
 INC := -I ./include -I ./lib/plog/include
 TARGET := ./bin/main
 
+.PHONY: default  # https://stackoverflow.com/a/30176470
+default: $(TARGET)
+
+.PHONY: clean
+clean:
+	rm -rf $(BUILD)/* $(TARGET)
+
 $(TARGET): $(BUILD)/add.o $(BUILD)/main.o
 	$(CXX) $(CXXFLAGS) $(INC) -o $@ $^
 
@@ -14,8 +21,3 @@ $(BUILD)/main.o: $(SRC)/main.cpp
 
 $(BUILD)/add.o: $(SRC)/add.cpp
 	$(CXX) $(CXXFLAGS) $(INC) -o $@ -c $^
-
-clean:
-	rm -rf $(BUILD)/* $(TARGET)
-
-default: $(TARGET)
