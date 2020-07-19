@@ -1,5 +1,9 @@
+## leancpp
+
+![CI](https://github.com/shivamMg/learncpp/workflows/CI/badge.svg?branch=master)
+
 ```
-git submodule init
-git submodule update
+make git-submodule
 make
 ```
+
