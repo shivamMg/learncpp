@@ -12,9 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: get dependency libs
-      run: make git-submodule
+      with:
+        submodules: true
 
     - name: build
       run: make
