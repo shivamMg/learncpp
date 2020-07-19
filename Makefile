@@ -9,6 +9,11 @@ TARGET := ./bin/main
 .PHONY: default  # https://stackoverflow.com/a/30176470
 default: $(TARGET)
 
+.PHONY: git-submodule
+git-submodule:
+	git submodule init
+	git submodule update
+
 .PHONY: clean
 clean:
 	rm -rf $(BUILD)/* $(TARGET)

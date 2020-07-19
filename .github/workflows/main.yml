@@ -13,10 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: make
+    - name: get dependency libs
+      run: make git-submodule
+
+    - name: build
       run: make
 
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: run
+      run: ./bin/main
+
